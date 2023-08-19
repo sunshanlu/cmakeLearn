@@ -1,0 +1,4 @@
+#define Tutorial_VERSION_MAJOR @cmakeLearn_VERSION_MAJOR@
+#define Tutorial_VERSION_MINOR @cmakeLearn_VERSION_MINOR@
+
+#define FUNCK_HAHA @CMAKE_DEFINE_FUCK@
