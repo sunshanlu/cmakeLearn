@@ -37,3 +37,28 @@ target_include_directories(${PROJECT_NAME}
 
 
 ## 二、为库文件生成添加编译选项
+添加编译选项：向编译器添加编译信息，比如定义宏道源文件，使得编译变的更加灵活。
+```cmake
+# MathFunctions/CMakeLists.txt
+option(USE_MY "use my define out standard library" ON)
+
+add_library(MathFunctions MathFunctions.cxx mySqrt.cxx)
+
+if(${USE_MY})
+    message(我是图图小淘气 ${USE_MY})
+    target_compile_definitions(MathFunctions
+        PRIVATE USE_MY
+    )
+endif()
+```
+- `option()`函数用来添加选项，该选项会在第一次运行cmake时写入到缓存中
+  - 添加选项的名称，即选项变量名
+  - 对该选项的描述信息
+  - 定义变量的内容
+  - 值得注意的是，如果编译文件夹不被删除，该option变量不会被更改
+- `target_compile_definitions()`函数用来添加编译选项
+  - `option()`函数生成的缓存变量被用来作为判断条件
+  - 第一参数：target，为可执行文件target或者库文件taregt
+  - 第二参数：访问权限 宏名
+- 上面cmake中的意思为：如果`USE_MY`这个变量不为`false`则输出...，并添加USE_MY宏名到MathFunctions库文件编译中
+
