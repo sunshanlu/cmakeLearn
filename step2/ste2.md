@@ -36,4 +36,4 @@ target_include_directories(${PROJECT_NAME}
   - 库文件所对应的源文件列表
 
 
-## 二、为库文件生成添加选项
+## 二、为库文件生成添加编译选项
