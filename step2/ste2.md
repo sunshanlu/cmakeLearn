@@ -61,4 +61,3 @@ endif()
   - 第一参数：target，为可执行文件target或者库文件taregt
   - 第二参数：访问权限 宏名
 - 上面cmake中的意思为：如果`USE_MY`这个变量不为`false`则输出...，并添加USE_MY宏名到MathFunctions库文件编译中
-
